@@ -1,16 +1,23 @@
 <h1>Burgers</h1>
 
 <ul>
-    {{#each burgers}}
-<li>
-  	   <p>ID: {{this.burger_name}}
+  {{#each burgers}}
+    {{#unless devoured}}
+      <p>ID: {{this.burger_name}}
 	<button class="devour" data-id="{{id}}" data-newDevour="{{devour}}">
 		Devour
 	</button>
 
-	<button class="delete-burger" data-id="{{this.id}}">DELETE!</button>
-    </p>
-    {{/each}}
+    {{/unless}}
+  {{/each}}
+</ul>
+
+<ul>
+  {{#each burgers}}
+    {{#if devoured}}
+     {{this.burger_name}}
+    {{/if}}
+  {{/each}}
 </ul>
 
 <h2>Add a Burger</h2>
