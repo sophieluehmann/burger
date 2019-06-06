@@ -15,18 +15,30 @@ router.get("/", function(req, res) {
 });
   
 
-//idk what this even does, need to create the html to match it 
+
 router.post("/api/burgers", function(req, res) {
     burger.insertOne([
-      "burger_name", "devour"
+      'burger_name'
     ], [
-      req.body.name, false
+      req.body.burger_name
     ], function(result) {
-      res.json({ id: result.insertId });
+      res.redirect('/');
     });
   });
 
+  router.put("/api/burgers/:id", function(req, res) {
+    var condition = "id = " + req.params.id;
+  
+    console.log("condition", condition);
+  
+    burger.updateOne({
+      devoured: true
+    }, condition, function(result) {
+     
+        res.redirect('/');
 
+    });
+  });
  
   
 

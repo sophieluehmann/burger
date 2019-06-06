@@ -2,11 +2,10 @@
 
 <ul>
   {{#each burgers}}
-    {{#unless devoured}}
-      <p>ID: {{this.burger_name}}
-	<button class="devour" data-id="{{id}}" data-newDevour="{{devour}}">
-		Devour
-	</button>
+    {{#unless this.devoured}}
+    <form action="api/burgers/{{this.id}}?_method=PUT" method="POST">
+        <button type="submit" class='burgerAvailable'> {{this.burger_name}}</button>
+    </form>
 
     {{/unless}}
   {{/each}}
@@ -21,13 +20,8 @@
 </ul>
 
 <h2>Add a Burger</h2>
-<form class="create-form">
 
-  <div class="form-group">
-    <label for="ba">Burger Name</label>
-    <input type="text" id="ba" name="name">
-  </div>
-
-  <button type="submit">Add Burger</button>
-</form>
-
+    <form action="api/burgers" method="POST">
+      <input type="text" id="name" name="burger_name">
+      <button type="submit" class="addBurgerButton">Add Burger</button>
+    </form>
