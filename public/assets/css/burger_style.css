@@ -1,11 +1,37 @@
+body{
+    background-color: palegoldenrod;
+}
+
+img {
+    margin: none;
+    width: 200px;
+    height: 200px;
+}
 .container {
     text-align: center;
-    margin: 30px;
+    margin: 20px;
 }
 
 .col-6 {
     display: block;
     float: right;
-    color: blue;
+}
 
+#not-devoured {
+    padding: 10px;
+}
+
+button {
+    margin: 5px;
+}
+
+#burger {
+    background-color: lightsalmon;
+    margin: 5px;
+}
+
+#eaten {
+    margin: 5px;
+    background-color: lightgray;
+    padding: 10px;
 }

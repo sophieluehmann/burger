@@ -1,16 +1,17 @@
-
 <div class="container">
-  <div class="col-12">
-    <div class="row">
-      <h1>Eat-Da-Burger</h1>
-    </div>
+  <div class="row">
+  <div class="col-4"></div>
+  <div class="col-4">
+    <h1>Eat-Da-Burger</h1>
+  </div>
+  <div class="col-4"></div>
   </div>
 </div>
 
 <div class="container">
   <div class="row">
   <div class="col-4"></div>
-  <div class="col-4">
+  <div class="col-4" id="img">
     <img src="/assets/img/Krabby_Patty_transparentpng.png" alt="Burger">
   </div>
   <div class="col-4"></div>
@@ -20,12 +21,16 @@
 <div class="container">
   <div class="row">
     <div class="col-6">
+      <h3>Burgers</h3>
       <ul>
         {{#each burgers}}
         {{#unless this.devoured}}
-        <div class="row">
+        <div class="row" id="burger">
+          <div id="not-devoured">
+          {{this.burger_name}}
+          </div>
           <form action="api/burgers/{{this.id}}?_method=PUT" method="POST">
-            <button type="submit" class='burgerAvailable'> {{this.burger_name}}</button>
+            <button type="submit" class='burgerAvailable'>Devour</button>
           </form>
         </div>
         {{/unless}}
@@ -34,10 +39,11 @@
     </div>
   
     <div class="col-6">
+      <h3>Devoured</h3>
       <ul>
       {{#each burgers}}
       {{#if devoured}}
-        <div class="row">
+        <div class="row" id="eaten">
           {{this.burger_name}}
         </div>
       {{/if}}
