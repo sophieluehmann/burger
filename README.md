@@ -1,13 +1,7 @@
 # burger
 
-app not fully functioning yet!!
-heres what needs to happen:
+This project is a "burger logger" that lists the burgers that have been inputted into the database. Each burger has the option to be "devoured". If the user clicks the "devour" button, that burger is moved over to the "devoured" section. 
 
-- buttons are there, just need to do an onclick function that moves 
-the burger over or deletes it from the database
-    - this isnt new stuff, just not quite sure where to put it in the code (maybe make another js file under the assets folder like the cat example and include that file in the scripts at the top of main html)
+If the user wants to add a new burger, there is an option to input a new burger into the database. Once submitted, the burger will be added to the list of burgers on the browser. 
 
-- need to create form and take that input and add it to the mysql database
-    - again, not so hard to do..just not totally sure on where to do it or what the exact syntax is 
-
-- once those things are taken care of make sure the code is all working then it will be done!!
+This app uses MySQL, Node, Express, Handlebars and a homemade ORM.
