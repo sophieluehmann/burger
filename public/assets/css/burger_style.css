@@ -1,4 +1,11 @@
-
 .container {
     text-align: center;
+    margin: 30px;
+}
+
+.col-6 {
+    display: block;
+    float: right;
+    color: blue;
+
 }
