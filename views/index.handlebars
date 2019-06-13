@@ -32,6 +32,9 @@
           <form action="api/burgers/{{this.id}}?_method=PUT" method="POST">
             <button type="submit" class='burgerAvailable'>Devour</button>
           </form>
+          <form action="api/burgers/{{this.id}}?_method=DELETE" method="POST">
+            <button type="submit" class="delete-burger" data-id="{{this.id}}">X</button>
+          </form>
         </div>
         {{/unless}}
         {{/each}}
@@ -45,6 +48,9 @@
       {{#if devoured}}
         <div class="row" id="eaten">
           {{this.burger_name}}
+          <form action="api/burgers/{{this.id}}?_method=DELETE" method="POST">
+            <button type="submit" class="delete-burger" data-id="{{this.id}}">X</button>
+          </form>
         </div>
       {{/if}}
       {{/each}}

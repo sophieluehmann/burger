@@ -35,3 +35,7 @@ button {
     background-color: lightgray;
     padding: 10px;
 }
+
+.delete-burger {
+    float: right;
+}

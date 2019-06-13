@@ -38,6 +38,14 @@ router.post("/api/burgers", function(req, res) {
       res.redirect('/');
     });
   });
+
+  router.delete("/api/burgers/:id", function(req, res) {
+    var condition = "id = " + req.params.id;
+  
+    burger.delete(condition, function(result) {
+      res.redirect('/')
+    });
+  });
  
   
 
